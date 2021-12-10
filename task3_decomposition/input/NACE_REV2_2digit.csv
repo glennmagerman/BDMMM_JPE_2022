@@ -1,0 +1,89 @@
+Code,Parent,Description
+1,A,"Crop and animal production, hunting and related service activities"
+2,A,Forestry and logging
+3,A,Fishing and aquaculture
+5,B,Mining of coal and lignite
+6,B,Extraction of crude petroleum and natural gas
+7,B,Mining of metal ores
+8,B,Other mining and quarrying
+9,B,Mining support service activities
+10,C,Manufacture of food products
+11,C,Manufacture of beverages
+12,C,Manufacture of tobacco products
+13,C,Manufacture of textiles
+14,C,Manufacture of wearing apparel
+15,C,Manufacture of leather and related products
+16,C,"Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials"
+17,C,Manufacture of paper and paper products
+18,C,Printing and reproduction of recorded media
+19,C,Manufacture of coke and refined petroleum products
+20,C,Manufacture of chemicals and chemical products
+21,C,Manufacture of basic pharmaceutical products and pharmaceutical preparations
+22,C,Manufacture of rubber and plastic products
+23,C,Manufacture of other non-metallic mineral products
+24,C,Manufacture of basic metals
+25,C,"Manufacture of fabricated metal products, except machinery and equipment"
+26,C,"Manufacture of computer, electronic and optical products"
+27,C,Manufacture of electrical equipment
+28,C,Manufacture of machinery and equipment n.e.c.
+29,C,"Manufacture of motor vehicles, trailers and semi-trailers"
+30,C,Manufacture of other transport equipment
+31,C,Manufacture of furniture
+32,C,Other manufacturing
+33,C,Repair and installation of machinery and equipment
+35,D,"Electricity, gas, steam and air conditioning supply"
+36,E,"Water collection, treatment and supply"
+37,E,Sewerage
+38,E,"Waste collection, treatment and disposal activities; materials recovery"
+39,E,Remediation activities and other waste management services
+41,F,Construction of buildings
+42,F,Civil engineering
+43,F,Specialised construction activities
+45,G,Wholesale and retail trade and repair of motor vehicles and motorcycles
+46,G,"Wholesale trade, except of motor vehicles and motorcycles"
+47,G,"Retail trade, except of motor vehicles and motorcycles"
+49,H,Land transport and transport via pipelines
+50,H,Water transport
+51,H,Air transport
+52,H,Warehousing and support activities for transportation
+53,H,Postal and courier activities
+55,I,Accommodation
+56,I,Food and beverage service activities
+58,J,Publishing activities
+59,J,"Motion picture, video and television programme production, sound recording and music publishing activities"
+60,J,Programming and broadcasting activities
+61,J,Telecommunications
+62,J,"Computer programming, consultancy and related activities"
+63,J,Information service activities
+64,K,"Financial service activities, except insurance and pension funding"
+65,K,"Insurance, reinsurance and pension funding, except compulsory social security"
+66,K,Activities auxiliary to financial services and insurance activities
+68,L,Real estate activities
+69,M,Legal and accounting activities
+70,M,Activities of head offices; management consultancy activities
+71,M,Architectural and engineering activities; technical testing and analysis
+72,M,Scientific research and development 
+73,M,Advertising and market research
+74,M,"Other professional, scientific and technical activities"
+75,M,Veterinary activities
+77,N,Rental and leasing activities
+78,N,Employment activities
+79,N,"Travel agency, tour operator and other reservation service and related activities"
+80,N,Security and investigation activities
+81,N,Services to buildings and landscape activities
+82,N,"Office administrative, office support and other business support activities"
+84,O,Public administration and defence; compulsory social security
+85,P,Education
+86,Q,Human health activities
+87,Q,Residential care activities
+88,Q,Social work activities without accommodation
+90,R,"Creative, arts and entertainment activities"
+91,R,"Libraries, archives, museums and other cultural activities"
+92,R,Gambling and betting activities
+93,R,Sports activities and amusement and recreation activities
+94,S,Activities of membership organisations
+95,S,Repair of computers and personal and household goods
+96,S,Other personal service activities
+97,T,Activities of households as employers of domestic personnel
+98,T,Undifferentiated goods- and services-producing activities of private households for own use
+99,U,Activities of extraterritorial organisations and bodies

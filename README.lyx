@@ -1,0 +1,700 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options " linkcolor=blue, citecolor=blue, urlcolor=blue, pdfstartview=XYZ, plainpages=false, pdfpagelabels"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Data and Program Guide to 
+\begin_inset Quotes eld
+\end_inset
+
+The Origins of Firm Heterogeneity: A Production Network Approach
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Andrew B.
+ Bernard, Emmanuel Dhyne, Glenn Magerman, Kalina Manova and Andreas Moxnes.
+\end_layout
+
+\begin_layout Section
+Overview
+\end_layout
+
+\begin_layout Itemize
+This file contains the necessary information to replicate the empirical
+ results of the paper.
+\end_layout
+
+\begin_layout Itemize
+The empirical analysis uses confidential firm-level and firm-to-firm-level
+ data, which we have acquired through a confidentiality agreement, so we
+ are unable to disclose these datasets.
+ These data are administered by the National Bank of Belgium.
+ For replication purposes, researchers can file an application through the
+ Research Department at the NBB (emmanuel.dhyne@nbb.be).
+ The original data are available for replication on secured servers at the
+ National Bank.
+\end_layout
+
+\begin_layout Itemize
+A detailed description of the data sources and construction is given in
+ Section 2 and Appendix A of the paper.
+\end_layout
+
+\begin_layout Itemize
+We provide the full coding pipeline for the results (graphs, tables) in
+ the paper.
+ We also provide code to generate random data with the same variables as
+ present in the real data.
+ This allows for all the code to run properly, although the results will
+ be based on random draws from distributions instead of the real data.
+\end_layout
+
+\begin_layout Itemize
+Codes are organized into tasks.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For a task-based approach to coding and project pipelines, see for instance
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "this description"
+target "https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/"
+literal "false"
+
+\end_inset
+
+, or this great talk by 
+\begin_inset CommandInset href
+LatexCommand href
+name "Patrick Ball"
+target "https://www.youtube.com/watch?v=ZSunU9GQdcI"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ Each task performs one action on the data, with an input, function and
+ output.
+ Within a task, variants of that action are also performed (e.g.
+ main vs robustness).
+ A series of tasks generates the coding and data pipeline for the project.
+\end_layout
+
+\begin_layout Itemize
+Results have been obtained using Stata 16 and Matlab.
+ The program installs the necessary ado-files to run the codes in Stata.
+ Matlab requires the Optimization toolbox.
+\end_layout
+
+\begin_layout Section
+Description per task
+\end_layout
+
+\begin_layout Itemize
+Copy the tasks folder to some location on your machine.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+main.do: 
+\series default
+change the absolute path under 
+\begin_inset Quotes eld
+\end_inset
+
+project folder
+\begin_inset Quotes erd
+\end_inset
+
+ to this location.
+ This do-file then executes all tasks of the project in sequential order.
+\end_layout
+
+\begin_layout Subsection
+task0_randomdata
+\end_layout
+
+\begin_layout Itemize
+Generate random data with the same variable names as the real data.
+ While the distributions of the variables are roughly comparable to the
+ real data, there is no correlation across variables nor over time.
+ This random data is for code debugging and replication purposes.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ createdata.do: 
+\series default
+creates 4 datasets along the same dimensions as the confidential data at
+ the NBB.
+ We have initialized these with 50,000 firms and 500,000 links across these
+ firms in a given year with a given seed.
+ This ensures there are sufficient observations in each decomposition (some
+ decompositions are quite detailed, e.g.
+ NACE 4-digit by NUTS3).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2.
+ copy_to_task1.do: 
+\series default
+copies task0/output to task1/input in the absence of real data.
+\end_layout
+
+\begin_layout Subsection
+task1_getdata
+\end_layout
+
+\begin_layout Itemize
+This code loads the datasets used in the paper.
+ The confidential data in /input are random, zip_nuts_Belgium.dta contains
+ real information on zip codes and their location.
+ We also provide public information on the confidential datasets in /docs.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ getdata.do: 
+\series default
+load the 4 datasets, extract necessary variables.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For annual accounts, all flow variables are annualized from fiscal to calendar
+ years.
+\end_layout
+
+\begin_layout Itemize
+NACE codes have been concorded to the 2008 version to cope with changes
+ in the NACE classification over time.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+2.
+ clean.do: 
+\series default
+fill in panel gaps if missing in one year for zip or nace code.
+ Keep firms with at least 1 FTE.
+\end_layout
+
+\begin_layout Subsection
+task2_FE_regression
+\end_layout
+
+\begin_layout Itemize
+This task runs the high-dimensional two-way fixed effects regression, and
+ reports some statistics on it.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ FE_regression.do: 
+\series default
+estimates 
+\begin_inset Formula $\ln m_{ij}=\ln\psi_{i}+\ln\theta_{j}+\ln\omega_{ij}$
+\end_inset
+
+.
+ The reghdfe procedure iteratively drops unidentified fixed effects (called
+ singletons by the progam), and ultimately retains the giang connected component
+ of the network (also often called the mobility group in applications with
+ employer-employee data).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2.
+ table1_var_2wayFE.do: 
+\series default
+creates Table 1.
+\end_layout
+
+\begin_layout Subsection
+task3_decomposition
+\end_layout
+
+\begin_layout Itemize
+This task performs the variance decompositionof sales in Section 3 and the
+ appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ datasets.do: 
+\series default
+from output of FE regression to format for variance decomposition, and add
+ firm observables needed for the decomposition.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2.
+ create_components.do: 
+\series default
+create variables for decomposition, and construct the components.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+3.
+ table2_decomposition.do: 
+\series default
+creates Table 2, and also results for other years (Table 15 in appendix).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+4.
+ table3_correlations.do: 
+\series default
+creates Table 3.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+5.
+ E1 decomp_bysector.do: 
+\series default
+creates Tables 13 and 14 in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+6.
+ E3 decomp_differences.do: 
+\series default
+creates Table 16 in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+7.
+ E4 decomp_nace_nuts3.do: 
+\series default
+creates Table 17 (row 1) in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+8.
+ E4 decomp_nacexnuts3.do: 
+\series default
+creates Table 17 (row 2) in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+9.
+ E4 nonparametric.do: 
+\series default
+creates Figure 11 in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+10.
+ D2 sellerFE_tau.do: 
+\series default
+confirms the results in appendix D2.
+\end_layout
+
+\begin_layout Subsection
+task4_stylized_facts
+\end_layout
+
+\begin_layout Itemize
+This task reproduces the stylized facts in Section 2 and additional results
+ in the appendix.
+ This task uses the decomposition sample of Section 3.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ datasets.do: 
+\series default
+start from the output of the 2-way FE regression, and add characteristics
+ on both the supplier and customer side.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2.
+ fact1_dispersion.do: 
+\series default
+creates Figure 1.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+3.
+ fact2_correlations.do: 
+\series default
+creates Figures 2 and 3.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+4.
+ fact3_assortativity.do: 
+\series default
+creates Figure 4.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+5.
+ B1 distributions_lnS_lnns_lnns.do: 
+\series default
+creates Tables 7, 8, 9, 10 in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+6.
+ B2 fact2_sector_pair_demeaning.do: 
+\series default
+recreates the result in appendix B2.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+7.
+ B3 fringe_buyers.do: 
+\series default
+recreates Table 11 in the appendix.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+8.
+ C exo mobility.do: 
+\series default
+recreates Figure 9, Figure 10, and Table 12 in the Appendix.
+\end_layout
+
+\begin_layout Subsection
+task5_SMM
+\end_layout
+
+\begin_layout Itemize
+This task sets up the SMM of Section 5.
+ The SMM itself is estimated in Matlab (see below).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ table4_param_calibrations.do: 
+\series default
+this calculates the model hyper parameters from the micro data.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2.
+ prep_datasets.do: 
+\series default
+creates the datasets for the SMM analysis.
+ We prepare datasets for downstream analysis and upstream analysis separately.
+ The focal unit is the firm for which we have the decomposition.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+3.
+ SMM_moments.do: 
+\series default
+calculates the moments of interest for the SMM.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+4.
+ bootstrap.do: 
+\series default
+creates 1000 bootstrapped samples (with replacement) from the estimation
+ sample, to create standard errors for the SMM estimates.
+\end_layout
+
+\begin_layout Subsection
+task6_SMMresults
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+matching_2019.m
+\series default
+: Main file Matlab for SMM estimation, model fit and counterfactuals.
+\end_layout
+
+\begin_layout Itemize
+The file produces:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Figure 7
+\end_layout
+
+\begin_layout Itemize
+All results contained in Table 5
+\end_layout
+
+\begin_layout Itemize
+Data for Figure 5: distributions.csv
+\end_layout
+
+\begin_layout Itemize
+Data for Figure 6: sim_data_noZ.csv and sim_data_noF.csv
+\end_layout
+
+\begin_layout Itemize
+Data for Figure 8: cf_data_baseline.csv and cf_data_nocorr.csv
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Fig6Fig8.do:
+\series default
+ Stata do file for producing Figure 6 and 8.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+iterate_network.m:
+\series default
+ performs the fixed point associated with eq (8) in the paper.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+networkformation4.m: 
+\series default
+calculates the equilibrium network.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+vat_fp1.m
+\series default
+ performs the fixed points associated with eqs (6) and (7) in the paper.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+SMM_network.m
+\series default
+ calculates the simulated moments and the objective function.
+\end_layout
+
+\begin_layout Subsection
+task7_VATgroups
+\end_layout
+
+\begin_layout Itemize
+This task performs additional robustness results, grouping firms into groups
+ that might own individual companies.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+1.
+ data.do: 
+\series default
+sources the raw datasets again for manipulation in this task.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+2.
+ clean.do:
+\series default
+ cleans this data.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+3.
+ VATgroups.do: 
+\series default
+identifies groups for both sellers and buyers, drops intra-firm flows, and
+ sums all in/outgoing flows with partners.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+4.
+ FE_regression.do: 
+\series default
+estimates the FE model again.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+5.
+ create components.do: 
+\series default
+create variables for decomposition, and construct the components.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+6.
+ decomposition.do: 
+\series default
+performs the decomposition on the VAT groups.
+\end_layout
+
+\end_body
+\end_document
