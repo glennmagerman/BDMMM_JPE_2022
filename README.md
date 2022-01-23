@@ -19,9 +19,9 @@ We use reghdfe for estimating linear models with many fixed effects (Correia, 20
 
 • Inside main.do, change the absolute path under “project folder” to this location. This do-file then executes all tasks of the project in sequential order and saves results and other output within this location.
 
-###4.1 task0_randomdata
+### 4.1 task0_randomdata
 
-• Generate random data with the same variable names as the real data. While the distributions of the variables are roughly comparable to the real data, there is no correlation across variables nor over time. This random data is for code debugging and replication purposes.
+* Generate random data with the same variable names as the real data. While the distributions of the variables are roughly comparable to the real data, there is no correlation across variables nor over time. This random data is for code debugging and replication purposes.
 
 • 1. createdata.do: creates 4 datasets along the same dimensions as the confidential data at the NBB. We have initialized these with 50,000 firms and 500,000 links across these firms in a given year with a given seed. This ensures there are sufficient observations in each decomposition (some decompositions are quite detailed, e.g. NACE 4-digit by NUTS3).
 
