@@ -41,7 +41,7 @@ This code loads the datasets used in the paper. The confidential data in /input 
 
 This task runs the high-dimensional two-way fixed effects regression, and reports some statistics on it.
 
-1. FE_regression.do: estimates \ln m_{ij}=\ln\psi_{i}+\ln\theta_{j}+\ln\omega_{ij}. The reghdfe procedure iteratively drops unidentified fixed effects (called singletons by the progam), and ultimately retains the giang connected component of the network (also often called the mobility group in applications with employer-employee data).
+1. FE_regression.do: estimates \ln m_{ij}=\ln\psi_{i}+\ln\theta_{j}+\ln\omega_{ij}. The reghdfe procedure iteratively drops unidentified fixed effects (called singletons by the progam), and ultimately retains the giant connected component of the network (also often called the mobility group in applications with employer-employee data).
 
 2. table1_var_2wayFE.do: creates Table 1.
 
